@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google One 客服求助指南</title>
+<style>
+:root{
+  --blue:#1a73e8; --blue-d:#1967d2; --red:#ea4335; --yellow:#fbbc04; --green:#34a853;
+  --bg:#f1f3f4; --surface:#fff; --surface2:#f8f9fa; --border:#dadce0; --border2:#e8eaed;
+  --text:#202124; --text2:#5f6368; --text3:#80868b;
+  --blue-t:#e8f0fe; --green-t:#e6f4ea; --red-t:#fce8e6; --yellow-t:#fef7e0;
+  --shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
+  --shadow-l:0 1px 3px 0 rgba(60,64,67,.3),0 4px 8px 3px rgba(60,64,67,.15);
+  --sans:'Google Sans','Roboto','Noto Sans TC','Microsoft JhengHei',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 72px}
+
+/* ---- hero ---- */
+.hero{background:var(--surface);border-radius:0 0 28px 28px;box-shadow:var(--shadow);padding:44px 32px 38px;margin-bottom:28px;text-align:center;position:relative;overflow:hidden}
+.hero .bar{position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--blue) 0 25%,var(--red) 25% 50%,var(--yellow) 50% 75%,var(--green) 75% 100%)}
+.hero h1{font-size:30px;font-weight:500;margin:6px 0 10px;letter-spacing:-.5px}
+.hero h1 .g{color:var(--blue)} .hero h1 .o{color:var(--text)}
+.hero p{color:var(--text2);font-size:16px;margin:0 auto;max-width:540px}
+.hero .pill{display:inline-flex;align-items:center;gap:6px;margin-top:18px;background:var(--blue-t);color:var(--blue-d);font-size:13px;font-weight:500;padding:7px 16px;border-radius:999px}
+
+/* ---- generic card ---- */
+.card{background:var(--surface);border:1px solid var(--border2);border-radius:16px;box-shadow:var(--shadow);padding:22px 24px;margin-bottom:20px}
+.card h2{font-size:15px;font-weight:500;color:var(--text2);text-transform:none;margin:0 0 12px;letter-spacing:.3px}
+
+/* ---- prerequisite ---- */
+.pre{display:flex;gap:16px;align-items:flex-start;background:linear-gradient(135deg,var(--blue-t),#f3f8ff);border:1px solid #d2e3fc}
+.pre .ic{flex:0 0 42px;height:42px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center}
+.pre .ic svg{width:24px;height:24px;fill:#fff}
+.pre b{color:var(--blue-d)}
+.pre .t{font-size:14.5px;color:var(--text)}
+.pre .t .muted{color:var(--text2)}
+
+/* ---- section heading ---- */
+.shead{display:flex;align-items:center;gap:10px;margin:36px 4px 18px}
+.shead .dot{width:10px;height:10px;border-radius:50%}
+.shead h2{font-size:19px;font-weight:500;margin:0;color:var(--text)}
+
+/* ---- step ---- */
+.step{display:grid;grid-template-columns:48px 1fr;gap:18px;margin-bottom:22px}
+.step .num{grid-row:1/3;width:40px;height:40px;border-radius:50%;color:#fff;font-size:19px;font-weight:500;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+.n1{background:var(--blue)} .n2{background:var(--red)} .n3{background:var(--yellow);color:#3c4043!important} .n4{background:var(--green)}
+.step .body{min-width:0}
+.step h3{font-size:17px;font-weight:500;margin:6px 0 6px}
+.step p{margin:0 0 12px;color:var(--text2);font-size:14.5px}
+.step .k{color:var(--text);font-weight:500}
+.chip{display:inline-block;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:1px 7px;font-size:13px;color:var(--text);font-weight:500}
+
+/* ============ UI MOCKUPS ============ */
+.mock{border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:var(--surface);margin:4px 0 2px;position:relative}
+.mbar{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--surface2);border-bottom:1px solid var(--border2)}
+.mbar .d{width:11px;height:11px;border-radius:50%}
+.mbar .d1{background:#ee6a5f}.mbar .d2{background:#f5be4f}.mbar .d3{background:#61c454}
+.mbar .url{margin-left:8px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:3px 14px;font-size:12px;color:var(--text2);flex:1;max-width:280px}
+
+/* google top bar */
+.gtop{display:flex;align-items:center;padding:12px 16px;gap:14px;background:#fff}
+.glogo{font-size:20px;font-weight:400;letter-spacing:-.3px;white-space:nowrap}
+.glogo .b{color:#4285f4}.glogo .r{color:#ea4335}.glogo .y{color:#fbbc04}.glogo .g{color:#34a853}.glogo .one{color:#5f6368;margin-left:3px}
+.gtop .sp{flex:1}
+.icbtn{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#5f6368;position:relative}
+.icbtn svg{width:22px;height:22px;fill:currentColor}
+.avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#4285f4,#34a853);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:500;font-size:14px}
+/* highlight ring */
+.ring{box-shadow:0 0 0 3px var(--red);border-radius:50%}
+.ring::after{content:"①";position:absolute;top:-10px;right:-10px;background:var(--red);color:#fff;width:22px;height:22px;border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+/* contact panel mock */
+.panelwrap{display:flex;min-height:300px;background:var(--surface2)}
+.panelwrap .ghost{flex:1;padding:22px;color:var(--text3);font-size:13px}
+.panelwrap .ghost .gline{height:40px;background:#fff;border:1px solid var(--border2);border-radius:8px;margin-bottom:10px;display:flex;align-items:center;padding:0 14px;color:var(--text2);font-size:13px;gap:8px}
+.cpanel{flex:0 0 268px;background:#fff;border-left:1px solid var(--border);padding:16px 18px;position:relative}
+@media(max-width:560px){.panelwrap .ghost{display:none}.cpanel{flex:1;border-left:none}}
+.cpanel .phead{display:flex;align-items:center;justify-content:center;position:relative;color:var(--text2);font-size:15px;margin-bottom:14px}
+.cpanel .phead .x{position:absolute;right:0;color:var(--text3)}
+.cpanel .phead .bk{position:absolute;left:0;color:var(--text3)}
+.cpanel h4{text-align:center;font-size:17px;font-weight:500;margin:4px 0 14px}
+.stbadge{display:block;width:fit-content;margin:0 auto 8px;background:var(--blue-t);color:var(--blue-d);font-size:12px;font-weight:500;padding:3px 12px;border-radius:999px}
+.cpanel .q{text-align:center;font-weight:500;font-size:14px;margin-bottom:12px}
+.cpanel .inp{border:2px solid var(--blue);border-radius:6px;height:54px;padding:8px 10px;font-size:13px;color:var(--text3);margin-bottom:4px;position:relative}
+.cpanel .inp .ex{color:#9aa0a6}
+.cpanel .cnt{text-align:right;font-size:11px;color:var(--text3);margin-bottom:12px}
+.cpanel .cont{background:var(--blue);color:#fff;border-radius:6px;text-align:center;padding:9px;font-size:14px;font-weight:500}
+.cpanel .srow{display:flex;align-items:center;gap:10px;padding:12px 2px;border-top:1px solid var(--border2);color:var(--text2);font-size:14px}
+.cpanel .srow .sn{width:22px;height:22px;border-radius:50%;background:#3c4043;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:500}
+.hl3{box-shadow:0 0 0 2px var(--green);border-radius:8px;background:var(--green-t)!important}
+
+/* contact options mock */
+.opts{padding:14px;background:var(--surface2);display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.opt.best{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}
+.opt .oic{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 40px}
+.opt .oic svg{width:22px;height:22px;fill:#fff}
+.oic.c1{background:var(--green)}.oic.c2{background:var(--blue)}.oic.c3{background:var(--text3)}
+.opt .ot{flex:1;min-width:0}
+.opt .ot .tt{font-weight:500;font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.opt .ot .ds{font-size:13px;color:var(--text2)}
+.tag-best{background:var(--green);color:#fff;font-size:11px;font-weight:500;padding:1px 8px;border-radius:999px}
+
+/* payments mock */
+.pay{background:#fff}
+.payrow{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border2)}
+.payrow:last-child{border-bottom:none}
+.payrow .pic{width:30px;height:30px;flex:0 0 30px}
+.payrow .pic svg{width:30px;height:30px}
+.payrow .pt{flex:1;min-width:0}
+.payrow .pt .a{font-size:14.5px;font-weight:500}
+.payrow .pt .b{font-size:12.5px;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.payrow .amt{text-align:right;white-space:nowrap}
+.payrow .amt .m{font-size:14px;font-weight:500}
+.refunded{display:inline-block;background:var(--green-t);color:#137333;font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;margin-top:3px}
+.hlrow{background:var(--green-t)}
+
+/* chat mock */
+.chat{background:#fff;padding:16px;display:flex;flex-direction:column;gap:10px}
+.bub{max-width:82%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5}
+.bub .who{font-size:11px;color:var(--text3);margin-bottom:3px}
+.bub.agent{align-self:flex-start;background:var(--surface2);border:1px solid var(--border2);border-bottom-left-radius:4px}
+.bub.me{align-self:flex-end;background:var(--blue-t);border-bottom-right-radius:4px}
+.bub .ok{color:#137333;font-weight:600}
+
+/* callout under mock */
+.cap{font-size:12.5px;color:var(--text3);margin:8px 2px 0;display:flex;gap:6px;align-items:flex-start}
+.cap svg{width:15px;height:15px;fill:var(--text3);flex:0 0 15px;margin-top:2px}
+
+/* ---- channel table ---- */
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:4px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border2)}
+th{color:var(--text2);font-weight:500;font-size:13px;background:var(--surface2)}
+td .b{font-weight:500}
+.rec{color:#137333;font-weight:600}
+
+/* ---- tips ---- */
+.tips{counter-reset:t}
+.tip{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border2)}
+.tip:last-child{border-bottom:none}
+.tip .tn{counter-increment:t;flex:0 0 28px;height:28px;border-radius:50%;background:var(--blue-t);color:var(--blue-d);font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+.tip .tn::before{content:counter(t)}
+.tip .tx{font-size:14.5px}
+.tip .tx b{font-weight:600}
+.tip .tx .muted{color:var(--text2)}
+
+/* ---- script box ---- */
+.script{background:#202124;color:#e8eaed;border-radius:12px;padding:20px 22px}
+.script .lab{color:var(--yellow);font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.script p{margin:0;font-size:14.5px;line-height:1.75;color:#e8eaed}
+.script .hi{color:#8ab4f8;font-weight:500}
+
+/* ---- status banner ---- */
+.status{display:flex;gap:16px;align-items:center;background:var(--green-t);border:1px solid #ceead6;border-radius:16px;padding:18px 22px;margin-bottom:20px}
+.status .sic{flex:0 0 44px;height:44px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center}
+.status .sic svg{width:26px;height:26px;fill:#fff}
+.status b{color:#137333}
+.status .t{font-size:14.5px;color:var(--text)}
+
+/* ---- tldr ---- */
+.tldr{background:var(--surface);border:1px dashed var(--border);border-left:4px solid var(--blue);border-radius:12px;padding:16px 20px;margin-top:24px;font-size:14px}
+.tldr b{color:var(--blue-d)}
+
+footer{text-align:center;color:var(--text3);font-size:12.5px;margin-top:30px;line-height:1.9}
+footer a{color:var(--text2)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="bar"></div>
+  <h1><span class="g">Google One</span> <span class="o">客服求助指南</span></h1>
+  <p>誤買訂閱、要退款、找真人客服？照這張流程點,一次處理到好。</p>
+  <span class="pill">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#1967d2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+    付費會員專屬 · 2026 實測流程
+  </span>
+</div>
+
+<div class="wrap">
+
+  <!-- 先決條件 -->
+  <div class="card pre">
+    <div class="ic">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+    </div>
+    <div class="t">
+      <b>先決條件:要有付費方案才有真人客服</b><br>
+      <span class="muted">Google One / AI Pro 付費會員才能用</span> <span class="chip">即時通訊</span> <span class="chip">電話回撥</span> <span class="chip">電子郵件</span><span class="muted">。免費帳號沒有。一律用<b>網頁版 one.google.com</b>(App 的「支援」分頁已被移除)。</span>
+    </div>
+  </div>
+
+  <!-- 流程 -->
+  <div class="shead"><span class="dot" style="background:var(--blue)"></span><h2>四步驟:找到真人客服</h2></div>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="num n1">1</div>
+    <div class="body">
+      <h3>開 one.google.com,點右上角的「<span class="k">?</span>」</h3>
+      <p>登入<span class="k">買方案的那個帳號</span>,首頁右上角那排圖示,最左邊的問號就是說明入口。</p>
+      <div class="mock">
+        <div class="mbar"><span class="d d1"></span><span class="d d2"></span><span class="d d3"></span><span class="url">🔒 one.google.com</span></div>
+        <div class="gtop">
+          <span class="glogo"><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="g">l</span><span class="r">e</span><span class="one">One</span></span>
+          <span class="sp"></span>
+          <span class="icbtn ring"><svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg></span>
+          <span class="icbtn"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.488.488 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg></span>
+          <span class="icbtn"><svg viewBox="0 0 24 24"><path d="M6 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6-8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6-8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
+          <span class="avatar">A</span>
+        </div>
+      </div>
+      <div class="cap"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>紅圈處就是「說明 / ?」。右邊兩個分別是設定(齒輪)與 Google 應用程式。</div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="num n2">2</div>
+    <div class="body">
+      <h3>點「與我們聯絡」,描述你的問題</h3>
+      <p>說明面板打開後,拉到最下面點<span class="k">「與我們聯絡」</span>。步驟 1 會要你打一句問題(至少 2 字),例如 <span class="chip">退款</span> <span class="chip">誤買訂閱</span>,再按「繼續」。</p>
+      <div class="mock">
+        <div class="mbar"><span class="d d1"></span><span class="d d2"></span><span class="d d3"></span><span class="url">🔒 one.google.com</span></div>
+        <div class="panelwrap">
+          <div class="ghost">
+            <div style="font-size:15px;color:var(--text2);margin-bottom:14px;text-align:center">Google One 設定</div>
+            <div class="gline">✉️ 管理電子郵件接收設定</div>
+            <div class="gline">💳 變更付款方式</div>
+            <div class="gline">① 變更會員方案</div>
+            <div class="gline">⊠ 取消會員方案</div>
+          </div>
+          <div class="cpanel">
+            <div class="phead"><span class="bk">←</span>說明<span class="x">✕</span></div>
+            <h4>與我們聯絡</h4>
+            <span class="stbadge">步驟 1</span>
+            <div class="q">您需要哪方面的協助?</div>
+            <div class="inp"><span class="ex">例如:退款、誤買訂閱…</span></div>
+            <div class="cnt">0 / 100</div>
+            <div class="cont">繼續</div>
+            <div class="srow"><span class="sn">2</span>資源</div>
+            <div class="srow"><span class="sn">3</span>聯絡選項</div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>步驟 2「資源」只是跳說明文章,通常沒用,直接往步驟 3 走。</div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="num n3">3</div>
+    <div class="body">
+      <h3>到「步驟 3 · 聯絡選項」,真人客服在這裡</h3>
+      <p>這裡才會出現三個真人管道。<span class="k">首選「即時通訊」</span>——有文字記錄、可截圖存證。選項<span class="k">反灰</span>代表當下不開放,換一個或晚點再試。</p>
+      <div class="mock">
+        <div class="mbar"><span class="d d1"></span><span class="d d2"></span><span class="d d3"></span><span class="url">步驟 3 · 聯絡選項</span></div>
+        <div class="opts">
+          <div class="opt best">
+            <div class="oic c1"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
+            <div class="ot"><div class="tt">即時通訊 (Chat) <span class="tag-best">推薦</span></div><div class="ds">有文字記錄,可截圖存證——最佳選擇</div></div>
+          </div>
+          <div class="opt">
+            <div class="oic c2"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.18z"/></svg></div>
+            <div class="ot"><div class="tt">電話回撥</div><div class="ds">Google 打給你,免打國際電話;但口頭沒憑證,記得要案件編號</div></div>
+          </div>
+          <div class="opt">
+            <div class="oic c3"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+            <div class="ot"><div class="tt">電子郵件</div><div class="ds">不急再用,回覆最慢</div></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:18px">三個管道怎麼選</h2>
+      <div style="overflow-x:auto">
+      <table>
+        <tr><th>管道</th><th>適合</th><th>重點</th></tr>
+        <tr><td class="b rec">即時通訊 ✓</td><td>首選</td><td>留文字記錄、可存證</td></tr>
+        <tr><td class="b">電話回撥</td><td>急、想講清楚</td><td>Google 打給你;<b>務必要案件編號</b></td></tr>
+        <tr><td class="b">電子郵件</td><td>不急</td><td>最慢</td></tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <div class="num n4">4</div>
+    <div class="body">
+      <h3>驗證:到 <span class="k">payments.google.com</span> 看「已退款」</h3>
+      <p>信件可能互相矛盾,<span class="k">但付款紀錄不會騙人</span>。到「付款資料 → 活動」,交易標上綠色<span class="chip">已退款</span>才算數。</p>
+      <div class="mock">
+        <div class="mbar"><span class="d d1"></span><span class="d d2"></span><span class="d d3"></span><span class="url">🔒 payments.google.com · 活動</span></div>
+        <div class="pay">
+          <div class="payrow hlrow">
+            <div class="pic"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#e8f0fe"/><path d="M20 11l-7 3.5v5c0 4 3 7.5 7 8.5 4-1 7-4.5 7-8.5v-5L20 11z" fill="#1a73e8"/></svg></div>
+            <div class="pt"><div class="a">Google One</div><div class="b">Google AI Pro (5 TB) · 年繳</div></div>
+            <div class="amt"><div class="m">−$6,500</div><span class="refunded">已退款 ✓</span></div>
+          </div>
+          <div class="payrow">
+            <div class="pic"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#e8f0fe"/><path d="M20 11l-7 3.5v5c0 4 3 7.5 7 8.5 4-1 7-4.5 7-8.5v-5L20 11z" fill="#1a73e8"/></svg></div>
+            <div class="pt"><div class="a">Google One</div><div class="b">Google AI Pro (5 TB) · 月繳</div></div>
+            <div class="amt"><div class="m">−$650</div><span class="refunded">已退款 ✓</span></div>
+          </div>
+          <div class="payrow">
+            <div class="pic"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fce8e6"/><path d="M14 13h12v14l-6-3-6 3V13z" fill="#ea4335"/></svg></div>
+            <div class="pt"><div class="a">Google Play 應用程式</div><div class="b">YouTube Premium</div></div>
+            <div class="amt"><div class="m">−$119</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>上面數字為示意。狀態標「已退款」= 錢會回;顯示「已付款 / 無」= 退款還沒過,要再追客服。</div>
+    </div>
+  </div>
+
+  <!-- 真人對話示意 -->
+  <div class="shead"><span class="dot" style="background:var(--red)"></span><h2>真人客服對話長怎樣(示意)</h2></div>
+  <div class="card" style="padding:16px">
+    <div class="mock" style="box-shadow:none;border:1px solid var(--border2)">
+      <div class="chat">
+        <div class="bub agent"><div class="who">支援專員</div>預計款項會在 3 到 5 個工作天內退回原始付款方式,最多可能需要 10 個工作天,實際依發卡銀行而異。</div>
+        <div class="bub me"><div class="who">你</div>收到,所以是會退款對吧!</div>
+        <div class="bub agent"><div class="who">支援專員</div><span class="ok">是的,您一定會收到退款。</span>發生衝突的電子郵件是由於「多項請求」所致,目前最新狀態已獲確認。</div>
+      </div>
+    </div>
+    <div class="cap" style="padding:0 4px"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>你要的就是這種<b style="color:#137333">明確承諾</b>——「一定會收到退款」。拿到後回 payments 對帳確認。</div>
+  </div>
+
+  <!-- 5 重點 -->
+  <div class="shead"><span class="dot" style="background:var(--yellow)"></span><h2>處理 Google 客服的 5 個重點</h2></div>
+  <div class="card tips">
+    <div class="tip"><span class="tn"></span><div class="tx"><b>優先用「即時通訊」,留文字。</b> <span class="muted">電話講完也要<b>案件編號 (case number)</b>,否則等於沒記錄。</span></div></div>
+    <div class="tip"><span class="tn"></span><div class="tx"><b>同一件事別重複送多個管道。</b> <span class="muted">網站自助 + 電話兩邊都送,會冒出兩封<b>互相矛盾</b>的信(一封批准、一封拒絕)。認一個管道就好。</span></div></div>
+    <div class="tip"><span class="tn"></span><div class="tx"><b>別信信件,信「付款紀錄」。</b> <span class="muted">真相看 payments.google.com,標<b>「已退款」</b>才算數。</span></div></div>
+    <div class="tip"><span class="tn"></span><div class="tx"><b>背景一次講清楚。</b> <span class="muted">付費會員 / 誤買 / 學生方案到期自動轉全額——都是<b>可退或可凹優惠的好理由</b>。</span></div></div>
+    <div class="tip"><span class="tn"></span><div class="tx"><b>要一句明確承諾 + 事後驗證。</b> <span class="muted">像「您一定會收到退款」就是你要的;拿到後回 payments 對帳。</span></div></div>
+  </div>
+
+  <!-- 話術 -->
+  <div class="script">
+    <div class="lab">📋 可直接貼給客服的話術</div>
+    <p>我是<span class="hi">付費會員</span>,這筆是<span class="hi">誤買 / 學生方案到期自動轉全額</span>,想申請<span class="hi">退款</span>。<br>
+    我用了兩個管道申請,收到兩封內容相反的信,擔心重複衝突。<br>
+    麻煩你<span class="hi">直接看我付款紀錄的實際狀態</span>,告訴我:這筆到底會不會退、以哪封為準,並給我<span class="hi">案件編號</span>。謝謝!</p>
+  </div>
+
+  <!-- TLDR -->
+  <div class="tldr">
+    <b>TLDR:</b> 路徑 = <b>one.google.com → 右上「?」→ 與我們聯絡 → 填問題 → 步驟 3 聯絡選項</b>(付費才有;App 分頁已取消)。首選<b>即時通訊留記錄</b>、<b>別多管道重複送</b>(會矛盾)、一切以 <b>payments.google.com 的「已退款」</b>為準。
+  </div>
+
+  <footer>
+    資料來源:
+    <a href="https://support.google.com/googleone/answer/9269729?hl=zh-Hant">Google One 官方支援說明</a> ·
+    <a href="https://support.google.com/googleone/?hl=zh-Hant">Google One 支援首頁</a><br>
+    本頁 UI 為 Google Material 風格重繪示意,不含任何個人帳號資訊 · 可安心存檔分享
+  </footer>
+
+</div>
+</body>
+</html>
